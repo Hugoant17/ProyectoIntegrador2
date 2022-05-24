@@ -86,6 +86,38 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Si ya inicio su sesión se hará lo siguiente
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(mAuth.getCurrentUser() != null) {
+
+            String id = mAuth.getCurrentUser().getUid();
+
+            databaseReference.child("Usuarios").child(id).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        String rol = snapshot.child("rol").getValue().toString();
+                        if(rol.equals("Administrador")){
+                            startActivity(new Intent(getApplicationContext(),MenuAdmin.class));
+                            finish();
+                       }else if(rol.equals("Vendedor")){
+                            startActivity(new Intent(getApplicationContext(),MenuAdmin.class));
+                            finish();
+                        }else{
+                            startActivity(new Intent(getApplicationContext(),MenuCliente.class));
+                            finish();
+                        }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {}
+            });
+        }
+    }
+
     public void Registrarse(View view){
         Intent siguiente = new Intent(this, Registro.class);
         startActivity(siguiente);
