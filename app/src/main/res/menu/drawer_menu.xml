@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_usuarios"
+            android:title="Administrar Usuarios"
+            android:icon="@drawable/ic_email"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_tiendas"
+            android:title="Administrar Tiendas"
+            android:icon="@drawable/ic_email"/>
+
+    </group>
+
+    <item android:title="Configuración">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_perfil"
+                    android:title="Perfil"
+                    android:icon="@drawable/ic_email"/>
+                <item
+                    android:id="@+id/nav_cerrar"
+                    android:title="Cerrar Sesión"
+                    android:icon="@drawable/ic_email"/>
+            </group>
+        </menu>
+    </item>
+</menu>

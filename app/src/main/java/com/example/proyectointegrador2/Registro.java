@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,9 @@ public class Registro extends AppCompatActivity {
     private String password = "";
     private String address="";
     private String rol = "";
+    //AGREGAR EL DNI Y NACIMIENTO
+    private String dni = "";
+    private String nacimiento = "";
 
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
@@ -40,6 +44,7 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -108,4 +113,5 @@ public class Registro extends AppCompatActivity {
             }
         });
     }
+
 }
