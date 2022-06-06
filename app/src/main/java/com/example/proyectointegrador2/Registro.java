@@ -85,10 +85,10 @@ public class Registro extends AppCompatActivity {
                 if (task.isSuccessful()){
 
                     Map<String, Object> map = new HashMap<>();
-                    map.put("name",name);
-                    map.put("email",email);
-                    map.put("password",password);
-                    map.put("address",address);
+                    map.put("nombre",name);
+                    map.put("correo",email);
+                    map.put("contraseña",password);
+                    map.put("direccion",address);
                     map.put("rol",rol);
 
                     String id = mAuth.getCurrentUser().getUid();

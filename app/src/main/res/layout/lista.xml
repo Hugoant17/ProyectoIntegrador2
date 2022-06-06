@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imagen_tienda"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_nombre">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/titulo_tienda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la tienda"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/imagen_tienda"
+            android:layout_toEndOf="@+id/imagen_tienda"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            >
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/codigo_tienda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código de la tienda"
+            android:layout_toRightOf="@id/imagen_tienda"
+            android:layout_below="@id/titulo_tienda"
+            android:layout_toEndOf="@+id/imagen_tienda"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/direccion_tienda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/codigo_tienda"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/imagen_tienda"
+            android:layout_toRightOf="@id/imagen_tienda"
+            android:text="Dirección de la tienda"></TextView>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

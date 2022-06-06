@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.ProyectoIntegrador2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#3f51b5</item>
+        <item name="colorPrimaryVariant">#002984</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -13,8 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <!--estilo del navigationd drawer-->
-        <item name = "android:windowTranslucentStatus">true</item>
+        <!--estilo del navigation drawer <item name = "android:windowTranslucentStatus">true</item>-->
+
 
     </style>
 

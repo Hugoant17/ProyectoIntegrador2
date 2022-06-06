@@ -140,7 +140,6 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
                 break;
             case R.id.nav_perfil:
                 ft.replace(R.id.content, new PerfilFragment()).commit();
-
                 break;
             case R.id.nav_cerrar:
                 mAuth.signOut();
