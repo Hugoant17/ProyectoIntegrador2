@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -50,20 +51,21 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_admin);
 
-        //Nombre del usuario en el Menú
-        muestraUsuario = (TextView) findViewById(R.id.txtMuestraUsuario);
+        //firebase
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         //UI del menú
         mDrawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+
         //fragmento predeterminado
         getSupportFragmentManager().beginTransaction().add(R.id.content, new UsuariosFragment()).commit();
-        setTitle("Usuarios");
+        setTitle("Administrar Usuarios");
 
         //Setup Toolbar
         setSupportActionBar(toolbar);
-
 
         toggle = setUpDrawerToggle();
         mDrawerLayout.addDrawerListener(toggle);
@@ -71,22 +73,21 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
         //para los items
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        mAuth = FirebaseAuth.getInstance();
-
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-
         //InfoUsuario();
 
     }
     //para que aparezca el nombre del usuario en el menú
     private void InfoUsuario(){
+
+        muestraUsuario = (TextView) findViewById(R.id.txtMuestraUsuario);
+        //Nombre del usuario en el Menú
+
         String id = mAuth.getCurrentUser().getUid();
         mDatabase.child("Usuarios").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
-                    String name = snapshot.child("name").getValue().toString();
+                    String name = snapshot.child("nombre").getValue().toString();
                     muestraUsuario.setText(name);
                 }
             }
@@ -97,6 +98,7 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
     }
 
     private ActionBarDrawerToggle setUpDrawerToggle(){
+
         return new ActionBarDrawerToggle(this,
                 mDrawerLayout,
                 toolbar,
@@ -131,6 +133,9 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
         FragmentManager fm=getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
+        //Se inicia la informacion del usuario
+        //InfoUsuario();
+
         switch(item.getItemId()){
             case R.id.nav_usuarios:
                 ft.replace(R.id.content, new UsuariosFragment()).commit();
@@ -153,6 +158,7 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         if(toggle.onOptionsItemSelected(item)){
             return true;
         }

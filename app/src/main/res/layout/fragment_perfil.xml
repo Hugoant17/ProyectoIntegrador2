@@ -25,7 +25,7 @@
                 android:id="@+id/linearLayoutCompat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#b2dfdb"
+                android:background="#e1f5fe"
                 android:orientation="vertical"
                 android:padding="10dp"
                 app:layout_constraintTop_toTopOf="parent">
@@ -40,10 +40,12 @@
 
                 <!-- Imagen de usuario -->
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/fotoPerf"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
+                    android:clickable="false"
                     android:src="@drawable/logo"
                     app:civ_border_color="@color/black"
                     app:civ_border_width="6dp" />
@@ -54,10 +56,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout3"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="399dp"
+                android:layout_width="398dp"
                 android:layout_height="67dp"
                 android:layout_marginStart="16dp"
-
                 android:layout_marginEnd="16dp"
 
                 android:hint="Correo Electrónico"
@@ -83,7 +84,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout5"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="405dp"
+                android:layout_width="398dp"
                 android:layout_height="71dp"
                 android:layout_marginStart="16dp"
 
@@ -179,6 +180,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

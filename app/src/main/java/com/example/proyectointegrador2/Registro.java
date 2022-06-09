@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class Registro extends AppCompatActivity {
 
-    EditText txtRegistroCorreo, txtRegistroContra, txtRegistroNom, txtRegistroDirec;
+    EditText txtRegistroCorreo, txtRegistroContra, txtRegistroNom, txtRegistroDirec, txtRegistroDni;
     Button btnRegistrar;
 
     //VARIABLES DE LOS DATOS QUE VAN A SER REGISTRADOS
@@ -53,6 +53,7 @@ public class Registro extends AppCompatActivity {
         txtRegistroContra = (EditText) findViewById(R.id.txtRegistroContra);
         txtRegistroNom = (EditText) findViewById(R.id.txtRegistroNom);
         txtRegistroDirec = (EditText) findViewById(R.id.txtRegistroDirec);
+        txtRegistroDni = (EditText) findViewById(R.id.txtRegistroDni);
         btnRegistrar = (Button) findViewById(R.id.btnRegistrar);
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
@@ -62,9 +63,10 @@ public class Registro extends AppCompatActivity {
                 email = txtRegistroCorreo.getText().toString();
                 password = txtRegistroContra.getText().toString();
                 address = txtRegistroDirec.getText().toString();
+                dni = txtRegistroDni.getText().toString();
                 rol = "Cliente";
 
-                if(!name.isEmpty() && !email.isEmpty() && !password.isEmpty() && !address.isEmpty()){
+                if(!name.isEmpty() && !email.isEmpty() && !password.isEmpty() && !address.isEmpty() && !dni.isEmpty()){
 
                     if (password.length() >= 6){
                         registerUser();
@@ -89,6 +91,7 @@ public class Registro extends AppCompatActivity {
                     map.put("correo",email);
                     map.put("contraseña",password);
                     map.put("direccion",address);
+                    map.put("dni",dni);
                     map.put("rol",rol);
 
                     String id = mAuth.getCurrentUser().getUid();

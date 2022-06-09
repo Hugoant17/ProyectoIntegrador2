@@ -5,12 +5,12 @@
         <item
             android:id="@+id/nav_usuarios"
             android:title="Administrar Usuarios"
-            android:icon="@drawable/ic_email"
+            android:icon="@drawable/ic_group"
             android:checked="true"/>
         <item
             android:id="@+id/nav_tiendas"
             android:title="Administrar Tiendas"
-            android:icon="@drawable/ic_email"/>
+            android:icon="@drawable/ic_casa"/>
 
     </group>
 
@@ -20,11 +20,11 @@
                 <item
                     android:id="@+id/nav_perfil"
                     android:title="Perfil"
-                    android:icon="@drawable/ic_email"/>
+                    android:icon="@drawable/ic_nombre"/>
                 <item
                     android:id="@+id/nav_cerrar"
                     android:title="Cerrar Sesión"
-                    android:icon="@drawable/ic_email"/>
+                    android:icon="@drawable/ic_exit"/>
             </group>
         </menu>
     </item>

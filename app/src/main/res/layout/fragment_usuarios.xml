@@ -12,13 +12,33 @@
         android:id="@+id/txtPrueba"
         android:layout_width="238dp"
         android:layout_height="37dp"
+        android:layout_marginTop="44dp"
         android:text="AQUI LOS USUARIOS"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintTop_toBottomOf="@+id/imgSubido" />
+
+    <Button
+        android:id="@+id/btnSubir"
+        android:layout_width="147dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="20dp"
+        android:text="SUBIR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrueba" />
+
+    <ImageView
+        android:id="@+id/imgSubido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="168dp"
+        android:src="@drawable/cl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -118,21 +118,20 @@ public class CrearTiendaFragment extends DialogFragment {
         //Hago visible el botón de eliminar
         btnEliminarTienda.setVisibility(View.VISIBLE);
 
-
-        String codigo = etcodigo.getText().toString();
-        String nombre = etnombre.getText().toString();
-        String direccion = etdireccion.getText().toString();
-
         btnAgregaTienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String codigo = etcodigo.getText().toString();
+                String nombre = etnombre.getText().toString();
+                String direccion = etdireccion.getText().toString();
 
                 Map<String, Object> map = new HashMap<>();
                 map.put("codigo",codigo);
                 map.put("nombre",nombre);
                 map.put("direccion",direccion);
 
-                mDatabase.child("Tiendas").child(codigo).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                mDatabase.child("Tiendas").child(codigo).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
@@ -152,6 +151,9 @@ public class CrearTiendaFragment extends DialogFragment {
         btnEliminarTienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String codigo = etcodigo.getText().toString();
+
                 mDatabase.child("Tiendas").child(codigo).removeValue();
                 Toast.makeText(getContext(),"Se eliminó la tienda: "+ codigo, Toast.LENGTH_SHORT).show();
                 getDialog().dismiss();
