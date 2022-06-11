@@ -73,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
                                 if(rol.equals("Administrador")){
                                     startActivity(new Intent(getApplicationContext(),MenuAdmin.class));
                                     Toast.makeText(getApplicationContext(), "Bienvenido Administrador", Toast.LENGTH_SHORT).show();
+                                }else if(rol.equals("Vendedor")){
+                                    startActivity(new Intent(getApplicationContext(),MenuVendedor.class));
+                                    Toast.makeText(getApplicationContext(), "Bienvenido Vendedor", Toast.LENGTH_SHORT).show();
                                 }else{
                                     startActivity(new Intent(getApplicationContext(),MenuCliente.class));
                                     Toast.makeText(getApplicationContext(), "Bienvenido Cliente", Toast.LENGTH_SHORT).show();
@@ -109,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),MenuAdmin.class));
                             finish();
                        }else if(rol.equals("Vendedor")){
-                            startActivity(new Intent(getApplicationContext(),MenuAdmin.class));
+                            startActivity(new Intent(getApplicationContext(),MenuVendedor.class));
                             finish();
                         }else{
                             startActivity(new Intent(getApplicationContext(),MenuCliente.class));

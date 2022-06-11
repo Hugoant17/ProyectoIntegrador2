@@ -1,10 +1,11 @@
-package com.example.proyectointegrador2.Entidades;
+package com.example.proyectointegrador2.Modelo;
 
 public class Tienda {
 
     private String codigo;
     private String nombre;
     private String direccion;
+
     //se agregó
     private String imagen;
 

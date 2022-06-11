@@ -24,6 +24,7 @@ import com.example.proyectointegrador2.R;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -33,6 +34,10 @@ import org.w3c.dom.Text;
 public class UsuariosFragment extends Fragment {
 
    TextView txtPrueba;
+
+    FloatingActionButton fab; //boton flotante
+
+
 
     private StorageReference mStorage;
     private Button mUploadBtn;
@@ -60,12 +65,15 @@ public class UsuariosFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_usuarios, container, false);
 
 
+        fab = view.findViewById(R.id.fab);
+
+
         mStorage = FirebaseStorage.getInstance().getReference();
 
         mUploadBtn = (Button) view.findViewById(R.id.btnSubir);
 
         txtPrueba = view.findViewById(R.id.txtPrueba);
-        txtPrueba.setText("Hola soy Hugo");
+        txtPrueba.setText("Eres administrador");
 
         mImageView = view.findViewById(R.id.imgSubido);
         mProgressDialog = new ProgressDialog(getContext());
@@ -79,12 +87,14 @@ public class UsuariosFragment extends Fragment {
             }
         });
 
-        Glide.with(getContext())
+        /*Glide.with(getContext())
                 .load("https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg")
                 .placeholder(R.drawable.ic_launcher_background)
                 .fitCenter()
                 .circleCrop()
-                .into(mImageView);
+                .into(mImageView);*/
+
+        AccionBoton();
 
         return view;
     }
@@ -128,4 +138,16 @@ public class UsuariosFragment extends Fragment {
         }
 
     }
+
+    public void AccionBoton(){
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Aqui se agrega usuarios", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
 }

@@ -1,8 +1,6 @@
 package com.example.proyectointegrador2.Adaptadores;
 
-import android.content.ClipData;
 import android.content.Context;
-import android.media.MediaRouter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.proyectointegrador2.Entidades.Tienda;
+import com.example.proyectointegrador2.Modelo.Tienda;
 import com.example.proyectointegrador2.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class AdapterTienda extends RecyclerView.Adapter<AdapterTienda.ViewHolder> implements View.OnClickListener {
