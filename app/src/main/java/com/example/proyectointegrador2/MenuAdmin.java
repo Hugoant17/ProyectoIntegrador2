@@ -55,6 +55,8 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+
+        //InfoUsuario();
         //UI del menú
         mDrawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -73,7 +75,8 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
         //para los items
         navigationView.setNavigationItemSelectedListener(this);
 
-        //InfoUsuario();
+        String nombredelusuario = "";
+
 
     }
     //para que aparezca el nombre del usuario en el menú
@@ -88,7 +91,7 @@ public class MenuAdmin extends AppCompatActivity implements NavigationView.OnNav
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     String name = snapshot.child("nombre").getValue().toString();
-                    muestraUsuario.setText(name);
+                    muestraUsuario.setText("Administrador: "+name);
                 }
             }
             @Override

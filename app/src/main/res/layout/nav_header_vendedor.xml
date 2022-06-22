@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:text="Administrador"
+        android:text="Vendedor"
         android:textAlignment="center"
         android:textSize="20sp" />
 
