@@ -1,152 +1,140 @@
 package com.example.proyectointegrador2.Fragments;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.proyectointegrador2.Modelo.Usuario;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.proyectointegrador2.MenuAdmin;
-import com.example.proyectointegrador2.R;
-import com.google.android.gms.auth.api.signin.internal.Storage;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import org.w3c.dom.Text;
+import com.example.proyectointegrador2.Adaptadores.AdapterUsuario;
+import com.example.proyectointegrador2.R;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
+import java.util.ArrayList;
 
 public class UsuariosFragment extends Fragment {
 
-   TextView txtPrueba;
+    FloatingActionButton fab2; //boton flotante
 
-    FloatingActionButton fab; //boton flotante
+    AdapterUsuario adapterUsuario;
+    RecyclerView recyclerViewUsuarios;
+    ArrayList<Usuario> listaUsuarios;
 
+    DatabaseReference database;
 
-
-    private StorageReference mStorage;
-    private Button mUploadBtn;
-    private static final int GALLERY_INTENT = 1;
-    private static final int RESULT_OK = -1;
-
-    private ImageView mImageView;
-    private ProgressDialog mProgressDialog;
 
     public UsuariosFragment() {
 
     }
-    /*
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
 
         }
-    }*/
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_usuarios, container, false);
 
+        fab2 = view.findViewById(R.id.fab2);
+        //firebase
+        database = FirebaseDatabase.getInstance().getReference("Usuarios");
 
-        fab = view.findViewById(R.id.fab);
+        recyclerViewUsuarios = view.findViewById(R.id.recyclerViewUsuarios);
 
+        listaUsuarios = new ArrayList<>();
 
-        mStorage = FirebaseStorage.getInstance().getReference();
+        cargarLista();
 
-        mUploadBtn = (Button) view.findViewById(R.id.btnSubir);
-
-        txtPrueba = view.findViewById(R.id.txtPrueba);
-        txtPrueba.setText("Eres administrador");
-
-        mImageView = view.findViewById(R.id.imgSubido);
-        mProgressDialog = new ProgressDialog(getContext());
-
-        mUploadBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/*");
-                startActivityForResult(intent,GALLERY_INTENT);
-            }
-        });
-
-        /*Glide.with(getContext())
-                .load("https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg")
-                .placeholder(R.drawable.ic_launcher_background)
-                .fitCenter()
-                .circleCrop()
-                .into(mImageView);*/
+        mostrarData();
 
         AccionBoton();
 
+
+
+
         return view;
     }
-
+    /*
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-    }
+    }*/
 
+    public void cargarLista(){
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == GALLERY_INTENT && resultCode == RESULT_OK){
-
-            mProgressDialog.setTitle("Subiendo foto...");
-            mProgressDialog.setTitle("Subiendo foto a firebase");
-            mProgressDialog.setCancelable(false);
-            mProgressDialog.show();
-
-            Uri uri = data.getData();
-
-            StorageReference filePath = mStorage.child("fotos").child(uri.getLastPathSegment());
-            filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    mProgressDialog.dismiss();
-                    //se otiene la direccion o enlace de descarga donde esta almacenada
-                    Task<Uri> descargarFoto = taskSnapshot.getStorage().getDownloadUrl();
-
-                    Glide.with(getContext())
-                            .load(descargarFoto)
-                            .centerCrop()
-                            .fitCenter()
-                            .into(mImageView);
-
-                    Toast.makeText(getContext(),"Se subio la foto correctamente",Toast.LENGTH_SHORT).show();
+        //implementando base de datos firebase
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaUsuarios.clear(); //Para que no se dupliquen los datos al volver a leer
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                    listaUsuarios.add(usuario);
                 }
-            });
-        }
+                adapterUsuario.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
     }
+
+    public void mostrarData(){
+        //get context porque estamos sen un fragment y no un this
+        recyclerViewUsuarios.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapterUsuario = new AdapterUsuario(getContext(), listaUsuarios);
+
+        recyclerViewUsuarios.setAdapter(adapterUsuario);
+
+        //el onclick
+        adapterUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String nombre = listaUsuarios.get(recyclerViewUsuarios.getChildAdapterPosition(view)).getNombre();
+
+                Toast.makeText(getContext(), "Selecciono al Usuario: "+nombre ,Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
+
 
     public void AccionBoton(){
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Aqui se agrega usuarios", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "AGREGUE USUARIO", Toast.LENGTH_SHORT).show();
+
             }
         });
+
 
     }
 

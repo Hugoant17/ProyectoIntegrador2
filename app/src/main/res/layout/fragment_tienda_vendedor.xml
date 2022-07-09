@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light"
+    android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".Fragments.Vendedor.TiendaVendedorFragment">
 
     <TextView
+        android:id="@+id/tutienda"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TU TIENDA"
-        android:textSize="20dp"
-        android:gravity="center"/>
+        android:layout_height="86dp"
+        android:gravity="center"
+        android:text="Tu tienda"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/imgTienda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cl" />
+
+    <TextView
+        android:id="@+id/txtnombreTienda"
+        android:paddingTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Nombre"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtdireccionTienda"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Dirección"
+        android:textSize="20sp" />
+</LinearLayout>

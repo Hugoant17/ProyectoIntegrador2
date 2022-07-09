@@ -1,0 +1,94 @@
+<androidx.cardview.widget.CardView
+
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+tools:context=".Fragments.Vendedor.CrearProductoFragment">
+
+<LinearLayout
+    android:layout_margin="17dp"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Producto"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/etCodProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ingrese Código"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etNomProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ingrese Nombre"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etDescProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ingrese Descripcion"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCatProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ingrese Categoria"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etStockProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ingrese Stock"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etPreProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ingrese Precio"
+        android:inputType="numberDecimal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <Button
+        android:id="@+id/btnAgregaProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AGREGAR" />
+
+    <Button
+        android:id="@+id/btnEliminarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar" />
+</LinearLayout>
+</androidx.cardview.widget.CardView>

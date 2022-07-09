@@ -13,17 +13,22 @@
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/activity_registro.xml" value="0.24909420289855072" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_carrito.xml" value="0.11727456940222898" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_categorias.xml" value="0.2359375" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_crear_producto.xml" value="0.25" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_crear_tienda.xml" value="0.264" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_pedidos.xml" value="0.11727456940222898" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_perfil.xml" value="0.1377049180327869" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_perfil2.xml" value="0.11727456940222898" />
-        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_perfil_cliente.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_perfil_cliente.xml" value="0.176" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_perfil_vendedor.xml" value="0.2359375" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_productos.xml" value="0.25" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_tienda_vendedor.xml" value="0.25" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_tiendas.xml" value="0.264" />
-        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_usuarios.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/fragment_usuarios.xml" value="0.1" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/lista.xml" value="0.4" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/lista_productos_cliente.xml" value="0.25" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/listado_productos_cliente.xml" value="0.264" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/listaproductos.xml" value="0.2" />
+        <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/listausuarios.xml" value="0.264" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/nav_header.xml" value="0.4" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/nav_header_vendedor.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/hugoa/AndroidStudioProjects/ProyectoIntegrador2/app/src/main/res/layout/toolbar.xml" value="0.264" />

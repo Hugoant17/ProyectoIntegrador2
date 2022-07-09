@@ -2,16 +2,21 @@ package com.example.proyectointegrador2.Modelo;
 
 public class Producto {
 
-    private String codigo, nombre, codTienda, descripcion, categoria;
+    private String codigo, nombre, codTienda, descripcion, categoria, foto;
     private int stock;
     private double precio;
 
-    public Producto(String codigo, String nombre, String codTienda, String descripcion, String categoria, int stock, double precio) {
+    public Producto() {
+
+    }
+
+    public Producto(String codigo, String nombre, String codTienda, String descripcion, String categoria, String foto, int stock, double precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.codTienda = codTienda;
         this.descripcion = descripcion;
         this.categoria = categoria;
+        this.foto = foto;
         this.stock = stock;
         this.precio = precio;
     }
@@ -54,6 +59,14 @@ public class Producto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public int getStock() {

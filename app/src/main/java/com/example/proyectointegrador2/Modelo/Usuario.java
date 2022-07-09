@@ -1,10 +1,21 @@
 package com.example.proyectointegrador2.Modelo;
 
 public class Usuario {
-    private String codigo, nombre, contraseña, dni, direccion, correo, rol, foto;
 
-    public Usuario(String codigo, String nombre, String contraseña, String dni, String direccion, String correo, String rol, String foto) {
-        this.codigo = codigo;
+    private String nombre;
+    private String contraseña;
+    private String dni;
+    private String direccion;
+    private String correo;
+    private String rol;
+    private String foto;
+
+
+    public Usuario(){
+
+    }
+
+    public Usuario(String nombre, String contraseña, String dni, String direccion, String correo, String rol, String foto) {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.dni = dni;
@@ -12,14 +23,6 @@ public class Usuario {
         this.correo = correo;
         this.rol = rol;
         this.foto = foto;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -37,7 +40,6 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-
 
     public String getDni() {
         return dni;

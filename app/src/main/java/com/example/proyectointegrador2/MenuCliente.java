@@ -25,8 +25,6 @@ public class MenuCliente extends AppCompatActivity {
     private Fragment fragment;
     private FragmentManager manager;
 
-
-    private Button mButtonSignOut;
     private FirebaseAuth mAuth;
 
     @Override
@@ -34,17 +32,7 @@ public class MenuCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_cliente);
 
-        mAuth = FirebaseAuth.getInstance();
-        mButtonSignOut = (Button) findViewById(R.id.btnCerrarCli);
 
-        mButtonSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                startActivity(new Intent(MenuCliente.this,MainActivity.class));
-                finish();
-            }
-        });
 
         initView();
         initValues();
@@ -97,8 +85,7 @@ public class MenuCliente extends AppCompatActivity {
                 .commit();
     }
     private void loadFirstFragment(){
-        //getSupportActionBar().setTitle("Categorias");
-        fragment = Carrito.newInstance();
+        fragment = Categorias.newInstance();
         openFragment(fragment);
     }
 }

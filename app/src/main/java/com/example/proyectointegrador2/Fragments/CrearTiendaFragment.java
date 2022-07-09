@@ -70,9 +70,7 @@ public class CrearTiendaFragment extends DialogFragment {
         //Oculto el botón
         btnEliminarTienda.setVisibility(View.GONE);
         //
-
         //
-
 
         btnAgregaTienda.setOnClickListener(new View.OnClickListener() {
             @Override

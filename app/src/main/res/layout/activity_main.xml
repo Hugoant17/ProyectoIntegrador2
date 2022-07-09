@@ -106,18 +106,33 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <Button
+        android:id="@+id/btnIngresoGoogle"
+        android:layout_width="350dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="4dp"
+        android:onClick="Registrarse"
+        android:text="Ingresa con Google"
+        android:backgroundTint="#ef5350"
+        app:strokeColor="@android:color/darker_gray"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/google_ico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+
+    <Button
         android:id="@+id/btnRegistro"
         android:layout_width="350dp"
         android:layout_height="61dp"
         android:layout_marginTop="4dp"
         android:onClick="Registrarse"
-        android:text="Registrate"
+        android:text="Registrate con Email"
         android:backgroundTint="#0077c2"
         app:strokeColor="@android:color/darker_gray"
         app:icon="@drawable/register"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresoGoogle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

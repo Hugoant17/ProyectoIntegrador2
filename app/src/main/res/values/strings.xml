@@ -2,6 +2,8 @@
     <string name="app_name">Corp Logistic App</string>
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
+    <string name="default_web_client_id1" translatable="false">1075227091655-jb9kj89ur9ukdaqarhagsjgsspdsfs1n.apps.googleusercontent.com</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
